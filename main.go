@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"go-workshop/basics"
+	"sync"
+	"time"
 )
 
 func main() {
@@ -88,6 +90,12 @@ func main() {
 	fmt.Println(q.name, q.age, q.height, q.place)
 
 	basics.RunBasics()
+	var wg sync.WaitGroup
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		go printNumbers(i, &wg)
+	}
+	wg.Wait()
 }
 
 // Pass by value
@@ -102,4 +110,10 @@ func add(x int64, y int64) int64 {
 func addByReference(x *int64, y int64) int64 {
 	*x = *x + 10
 	return *x + y
+}
+
+func printNumbers(i int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	time.Sleep(time.Duration(1) * time.Second)
+	fmt.Println(i)
 }

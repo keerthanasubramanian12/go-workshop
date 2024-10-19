@@ -66,6 +66,16 @@ func main() {
 	fmt.Println("Current Value of x is ", x)
 	fmt.Println("Sum of the numbers is", addByReference(&x, y))
 	fmt.Println("Value of x after add by reference is ", x)
+
+	type Person struct {
+		name   string
+		age    int
+		height float32
+		place  string
+	}
+
+	p := Person{name: "Krishna", age: 30, height: 5.10, place: "Erode"}
+	fmt.Println(p.name, p.age, p.height, p.place)
 }
 
 // Pass by value

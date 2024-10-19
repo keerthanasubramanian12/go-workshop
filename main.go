@@ -19,4 +19,28 @@ func main() {
 	} else {
 		fmt.Println("You have scored less than a century")
 	}
+
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	i := 10
+	for i < 15 {
+		fmt.Println(i)
+		i++
+	}
+
+	j := 20
+	for {
+		if j > 25 {
+			break
+		}
+		fmt.Println("Infinite loop")
+		j++
+	}
+
+	nums := [5]int{100, 200, 300, 400, 500}
+	for index, value := range nums {
+		fmt.Println(index, value)
+	}
 }

@@ -1,14 +1,13 @@
-package main
+package basics
 
 import (
 	"fmt"
-	"go-workshop/basics"
 )
 
-func main() {
+func RunBasics() {
 	fmt.Println("Hello, World!")
 	var age int = 30
-	var name string = "Keerthana"
+	var name string = "Krishna"
 	var height float32 = 5.10
 	fmt.Printf("My name is %s and my age is %d\n", name, age)
 	fmt.Printf("My height is %.2f\n", height)
@@ -23,6 +22,7 @@ func main() {
 		fmt.Println("You have scored less than a century")
 	}
 
+	// i is only available inside the for loop
 	for i := 0; i < 5; i++ {
 		fmt.Println(i)
 	}
@@ -87,7 +87,6 @@ func main() {
 	q.place = "Chennai"
 	fmt.Println(q.name, q.age, q.height, q.place)
 
-	basics.RunBasics()
 }
 
 // Pass by value
